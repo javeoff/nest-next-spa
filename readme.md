@@ -1,6 +1,8 @@
 # Next-Next-SPA
 
 nest-next-spa provide states from nest-next via SPA mode. 
+it exposes server parameters from nest controller method to next application,
+catched in getInitialProps
 
 ## Installation
 ```
