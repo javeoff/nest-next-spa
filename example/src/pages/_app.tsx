@@ -1,14 +1,14 @@
 import { INestNextApp, getNestNextInitialProps } from 'nest-next-spa';
 import Head from 'next/head';
 
-const App: INestNextApp = ({ Component, pageProps }) => {
+const App: INestNextApp = ({ Component, pageProps, ...props }) => {
   return (
     <>
       <Head>
         <title>{pageProps.title}</title>
         <style>{pageProps.style}</style>
       </Head>
-      <Component pageProps={pageProps} />
+      <Component pageProps={pageProps} {...props} />
     </>
   );
 };

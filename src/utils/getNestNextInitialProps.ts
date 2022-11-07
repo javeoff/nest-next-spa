@@ -38,15 +38,15 @@ export const getNestNextInitialProps = <
 
     if (Component.getInitialProps) {
       return {
+        ...newProps,
         pageProps: appProps,
         ...(await Component.getInitialProps(ctx)),
-        ...newProps,
       };
     }
 
     return {
-      pageProps: appProps,
       ...newProps,
+      pageProps: appProps,
     };
   }
 }
