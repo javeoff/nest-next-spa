@@ -1,5 +1,7 @@
 # Next-Next-SPA
 
+nest-next-spa provide states from nest-next via SPA mode. 
+
 ## Installation
 ```
 yarn add nest-next-spa
