@@ -15,16 +15,28 @@ npm install nest-next-spa
 
 ```ts
 // app.module.ts
-import { NestNextSpaModule } from 'nest-next-spa';
+import { NestNextSpaModule } from 'nest-next-spa/server';
+import { AppController } from './AppController';
+import { Module } from '@nestjs/common';
+import Next from 'next';
+import { RenderModule } from 'nest-next';
 
 @Module({
   controllers: [AppController],
-  imports: [NestNextSpaModule],
+  imports: [
+    RenderModule.forRootAsync(
+      Next({
+        dev: process.env.NODE_ENV !== 'production',
+      }),
+      { passthrough404: true, viewsDir: null },
+    ),
+    NestNextSpaModule
+  ],
 })
 export class AppModule {}
 
 // app.controller.ts
-import { Page } from 'nest-next-spa';
+import { Page } from 'nest-next-spa/server';
 
 @Controller()
 export class AppController {
@@ -47,8 +59,8 @@ const App: INestNextApp = ({ Component, pageProps }) => {
   );
 };
 
-App.getInitialProps = getNestNextInitialProps(() => {
+App.getInitialProps = getNestNextInitialProps(() => ({
   description: 'my description'
-})
+}))
 
 ```

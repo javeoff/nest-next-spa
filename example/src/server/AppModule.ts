@@ -1,4 +1,4 @@
-import { NestNextSpaModule } from 'nest-next-spa';
+import { NestNextSpaModule } from 'nest-next-spa/server';
 import { AppController } from './AppController';
 import { Module } from '@nestjs/common';
 import Next from 'next';
