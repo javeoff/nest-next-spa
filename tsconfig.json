@@ -20,9 +20,10 @@
     "incremental": true,
     "noImplicitOverride": true,
     "isolatedModules": false,
-    "composite": true
+    "composite": true,
   },
   "include": [
-    "packages"
+    "packages/client",
+    "packages/server"
   ]
 }

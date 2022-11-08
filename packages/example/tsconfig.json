@@ -24,7 +24,8 @@
       "dom",
       "dom.iterable",
       "esnext"
-    ]
+    ],
+    "types": ["cypress", "@testing-library/cypress"]
   },
   "exclude": [
     "dist",
