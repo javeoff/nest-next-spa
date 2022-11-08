@@ -3,7 +3,7 @@
     "declaration": true,
     "noEmit": false,
     "outDir": "./dist/",
-    "rootDir": "./src",
+    "rootDir": "packages",
     "target": "esnext",
     "module": "commonjs",
     "esModuleInterop": true,
@@ -23,6 +23,6 @@
     "composite": true
   },
   "include": [
-    "src",
+    "packages"
   ]
 }
